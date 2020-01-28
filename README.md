@@ -1,29 +1,15 @@
-# Gridsome Blog Starter
+# Gridsome + GuessJS Demo
 
-> A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.
+> This demo gives GuessJS a route provider with some fake data.
 
-## Features
-- Beautiful and simple design.
-- Markdown for content.
-- Tags support.
-- Dark / Light toggle.
-- CSS variables, SCSS & BEM for styling.
-- 100, 100, 100, 100 score on Google Lighthouse.
-- Uses same front-matter fields as Dev.to.
+Running this site in development (`gridsome develop`) should work fine, with the browser console telling you which routes it will prefetch.
 
-## Demo URL
+However, running `gridsome build` gives the below error:
 
-https://gridsome-starter-blog.netlify.com
+```bash
+95% emitting GuessPlugin /path-to-site/guessjs/node_modules/guess-webpack/dist/guess-webpack/main.js:660
+            compilation.assets[mainName] = new ConcatSource(stats.compilation.assets['./output.js'], '\n', old.source());
+                                                                                                               ^
 
-## Install
-
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Install this starter
-
-1. `gridsome create my-gridsome-site https://github.com/gridsome/gridsome-starter-blog.git`
-2. `cd my-gridsome-site` to open folder
-3. `gridsome develop` to start local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+TypeError: Cannot read property 'source' of undefined
+```
